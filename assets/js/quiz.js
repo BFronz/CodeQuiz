@@ -183,7 +183,7 @@ function allDone () {
     mainfooterEl.textContent = "";  
     
    if(showScore <= 0) {
-    mainfooterEl.textContent = "Please refresh screen and try again!";
+    mainfooterEl.textContent = "Your score is zero. Please refresh screen and try again!";
    }
    else {
       showIt(hformEl);
@@ -205,7 +205,6 @@ qformEl.addEventListener("click", function(event){
     checkAnswer(selected);
 }); 
 
-
 hformEl.addEventListener("click", function(event){
   event.preventDefault();
 
@@ -226,24 +225,11 @@ hformEl.addEventListener("click", function(event){
       scoreKeeper = storedScores;
   }
 
-  
-
-
    scoreKeeper.push({initials:initials,score:score});
    localStorage.setItem("scoreKeeper", JSON.stringify(scoreKeeper));
  
-    //localStorage.setItem("initials", initials);
-    //localStorage.setItem("score", score);
 
     window.location.href = "highscores.html";  
-
-
-    
-
-    
-
-
-
 });
 
 

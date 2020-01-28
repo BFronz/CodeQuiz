@@ -146,7 +146,7 @@ header {
     transform: translateY(4px);
     }
 
-  .btn-start {
+  .btn-start, #back, #clear {
         border: none;
         background-color: purple;
         border-radius: 10px;
@@ -188,7 +188,7 @@ input[type=text] {
     margin: 0x, 0px, 0px, 0px;
     padding: 5px 5px 5px 5px;
     text-align: left;
-    background-color: rgb(105, 56, 105);
+    background-color: rgb(177, 129, 177);
   }
 
 

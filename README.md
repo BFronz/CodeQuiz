@@ -22,6 +22,15 @@ Example: a 20 question quiz will add 200 seconds to answer.
 Highscores will be save so users can attempt to better thier scores while learing codeing questions that can be used as practice for technical interviews. 
 
 
+For testing, the answers to quiz are: 
+1. selector
+2. cost
+3. head
+4. ondrop
+5. All the above
+6. Node
+
+
 ## Acknowledgments
 
 * Rutgers Bootcamp Team
