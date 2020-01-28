@@ -179,13 +179,13 @@ input[type=text] {
   }  
   
   li {
-    border: none;
+    border-bottom: 1px soild white;
     min-width: 75px;
     border-radius: 5px;
     color: white;
     font-size: 16px;
     line-height: 22px;
-    margin: 15px, 0px, 0px, 0px;
+    margin: 0x, 0px, 0px, 0px;
     padding: 5px 5px 5px 5px;
     text-align: left;
     background-color: rgb(105, 56, 105);

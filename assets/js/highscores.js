@@ -3,6 +3,7 @@ var body = document.body;
 
 // create all selectors vars
 highScoresEl = document.querySelector("#highscores");
+formEl       = document.querySelector("#bform");
 
 
 
@@ -13,6 +14,8 @@ function init() {
   // Loop over every item in object
   var scoreKeeper = JSON.parse(localStorage.getItem("scoreKeeper"));
   var z = 1;
+
+   if(scoreKeeper.length === 0 ) {return;} 
 
   for (var i = 0; i < scoreKeeper.length; i++) {
   
@@ -30,24 +33,19 @@ function init() {
   }
 }
 
+formEl.addEventListener("click", function(){
+  event.preventDefault();
+ 
+  var selected = event.target.id;
+
+  if(selected === "back") { window.location.href = "index.html";   }
+  else if (selected === "clear") {
+    localStorage.clear();
+  }
+                             
+});
 
 
-
-
-
-
-
-// listeners 
-/*
-startEl.addEventListener("click", showQuestions);
-
-formEl.addEventListener("click", function(event){
-    event.preventDefault();
-    var selected = event.target.id;
-    checkAnswer(selected);
-}); 
-
-*/
 
 
 

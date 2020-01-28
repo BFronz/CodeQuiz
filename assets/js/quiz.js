@@ -212,7 +212,7 @@ hformEl.addEventListener("click", function(event){
   var x = document.getElementsByClassName("main-message");
   var str = x[0].innerHTML;
   const words = str.split(' ');
-  var score = parseInt(words[4])
+  var score = parseInt(words[4].trim());
 
   var initials = document.querySelector("#hscores-text").value;
   
