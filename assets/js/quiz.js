@@ -60,6 +60,8 @@ var questionCount  = 0;
 var newAnswerIndex = 0;
 var secondsLeft    = 60;
 var haltIt         = 0;
+var scoreKeeper   = [];
+
 
 
 // some inital set up
@@ -171,7 +173,6 @@ function adjustTimer(){
 function allDone () {
     haltIt = 1;
     hideIt(qformEl);
-    showIt(hformEl);
     var showScore = secondsLeft;
     if(showScore<0){ showScore = 0 ;}
     mainheaderEl.setAttribute("style", "font-weight:bold; text-align: left;");
@@ -179,8 +180,16 @@ function allDone () {
     mainmessageEl.textContent = "Your final score is " + showScore;
     gametimerEl.textContent = "Time: " + showScore;
     mainfooterEl.setAttribute("style", "border: none; ")
-    mainfooterEl.textContent = "";    
-}
+    mainfooterEl.textContent = "";  
+    
+   if(showScore <= 0) {
+    mainfooterEl.textContent = "Please refresh screen and try again!";
+   }
+   else {
+      showIt(hformEl);
+   }
+
+  }
 
 
 
@@ -197,6 +206,45 @@ qformEl.addEventListener("click", function(event){
 }); 
 
 
+hformEl.addEventListener("click", function(event){
+  event.preventDefault();
+
+  var x = document.getElementsByClassName("main-message");
+  var str = x[0].innerHTML;
+  const words = str.split(' ');
+  var score = parseInt(words[4])
+
+  var initials = document.querySelector("#hscores-text").value;
+  
+  if (initials === "") {
+    displayMessage("error", "Initals cannot be blank");
+  } 
+
+  console.log(initials);
+  var storedScores = JSON.parse(localStorage.getItem("scoreKeeper"));
+  if (storedScores !== null) {
+      scoreKeeper = storedScores;
+  }
+
+  
+
+
+   scoreKeeper.push({initials:initials,score:score});
+   localStorage.setItem("scoreKeeper", JSON.stringify(scoreKeeper));
+ 
+    //localStorage.setItem("initials", initials);
+    //localStorage.setItem("score", score);
+
+    window.location.href = "highscores.html";  
+
+
+    
+
+    
+
+
+
+});
 
 
 
