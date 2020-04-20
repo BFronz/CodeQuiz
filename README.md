@@ -31,6 +31,10 @@ For testing, the answers to quiz are:
 6. Node
 
 
+
+<img src="assets/code-quiz.png" alt="code-quiz">
+
+
 ## Acknowledgments
 
 * Rutgers Bootcamp Team
